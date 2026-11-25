@@ -7,6 +7,11 @@
   --beige: #f3ead9;
 }
 
+/* ==========================================================================
+   ESTILOS COMPARTIDOS / GLOBALES
+   (Base, aviso superior, contenedor, encabezados de sección, botones y footer)
+   ========================================================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,7 +28,7 @@ body {
   flex-direction: column;
 }
 
-/* --- Aviso superior --- */
+/* --- Aviso superior (compartido) --- */
 .notice {
   background-color: var(--negro);
   color: var(--dorado);
@@ -33,7 +38,7 @@ body {
   border-bottom: 2px solid var(--dorado);
 }
 
-/* --- Contenedor Maestro (Márgenes Uniformes) --- */
+/* --- Contenedor Maestro (compartido) --- */
 .main-wrapper {
   width: 100%;
   max-width: 1140px;
@@ -42,7 +47,108 @@ body {
   flex: 1;
 }
 
-/* --- Hero / Encabezado --- */
+/* --- Títulos de Sección (compartido entre index.html y páginas de categorías) --- */
+.projects-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.projects-header h2 {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--negro);
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--dorado);
+}
+
+.category-subtitle {
+  color: var(--gris);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* --- Botón Principal con Hover (compartido) --- */
+.btn-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background-color: var(--negro);
+  color: var(--beige);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid var(--dorado);
+  transition: all 0.3s ease;
+}
+
+.btn-principal::after {
+  content: '→';
+  font-size: 1.2rem;
+  color: var(--dorado);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 38, 46, 0.35);
+}
+
+.btn-principal:hover::after {
+  color: var(--beige);
+  transform: translateX(4px);
+}
+
+/* --- Footer (compartido) --- */
+footer {
+  background-color: var(--negro);
+  color: var(--beige);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 4px solid var(--dorado);
+  margin-top: auto;
+}
+
+footer h3 {
+  color: var(--dorado);
+  margin-bottom: 0.8rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer .enlinea a {
+  color: var(--beige);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+footer .enlinea a:hover {
+  color: var(--dorado);
+}
+
+footer p {
+  color: var(--gris-claro);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   SECCIÓN DE ESTILOS DE INDEX.HTML
+   (Portada principal: hero, bloques de información y grid de categorías)
+   ========================================================================== */
+
+/* --- Hero / Encabezado (index.html) --- */
 .hero {
   display: flex;
   flex-direction: column;
@@ -78,7 +184,7 @@ body {
   font-size: 1rem;
 }
 
-/* --- Sección de Subtítulos (About, Experience, Habilities) --- */
+/* --- Sección de Subtítulos: About, Experience, Habilities (index.html) --- */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -139,27 +245,7 @@ body {
   line-height: 1.3;
 }
 
-/* --- Títulos de Sección --- */
-.projects-header {
-  text-align: center;
-  margin-bottom: 2.2rem;
-}
-
-.projects-header h2 {
-  display: inline-block;
-  font-size: 2rem;
-  color: var(--negro);
-  padding-bottom: 0.4rem;
-  border-bottom: 3px solid var(--dorado);
-}
-
-.category-subtitle {
-  color: var(--gris);
-  margin-top: 0.5rem;
-  font-size: 1rem;
-}
-
-/* --- Grid de Tarjetas Principales --- */
+/* --- Grid de Tarjetas Principales de Categorías (index.html) --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -219,47 +305,14 @@ body {
   color: var(--gris);
   font-size: 0.92rem;
   margin-bottom: 1.4rem;
-  flex: 1; /* Empuja el botón siempre al fondo para alinear todas las tarjetas */
+  flex: 1;
 }
 
-/* --- Botón Principal con Hover --- */
-.btn-principal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0.8rem 1.1rem;
-  background-color: var(--negro);
-  color: var(--beige);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  border: 2px solid var(--dorado);
-  transition: all 0.3s ease;
-}
+/* ==========================================================================
+   SECCIÓN DE ESTILOS DE PÁGINAS DE CATEGORÍAS
+   (algorithmics, artificial-intelligence, software-development y team-leader.html)
+   ========================================================================== */
 
-.btn-principal::after {
-  content: '→';
-  font-size: 1.2rem;
-  color: var(--dorado);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.btn-principal:hover {
-  background-color: var(--rojo);
-  border-color: var(--rojo);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(179, 38, 46, 0.35);
-}
-
-.btn-principal:hover::after {
-  color: var(--beige);
-  transform: translateX(4px);
-}
-
-/* --- Estilos para las Páginas de Trabajos (Semanas) --- */
 .btn-back {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -333,46 +386,10 @@ body {
   gap: 0.6rem;
 }
 
-/* --- Footer --- */
-footer {
-  background-color: var(--negro);
-  color: var(--beige);
-  text-align: center;
-  padding: 2.5rem 1.5rem;
-  border-top: 4px solid var(--dorado);
-  margin-top: auto;
-}
+/* ==========================================================================
+   RESPONSIVE PARA MÓVILES (COMPARTIDO)
+   ========================================================================== */
 
-footer h3 {
-  color: var(--dorado);
-  margin-bottom: 0.8rem;
-}
-
-footer ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-footer .enlinea a {
-  color: var(--beige);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.25s ease;
-}
-
-footer .enlinea a:hover {
-  color: var(--dorado);
-}
-
-footer p {
-  color: var(--gris-claro);
-  font-size: 0.85rem;
-}
-
-/* --- Responsive para móviles --- */
 @media (max-width: 600px) {
   .main-wrapper {
     padding: 1.8rem 1rem 3rem;
