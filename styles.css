@@ -1,0 +1,390 @@
+:root {
+  --negro: #121212;
+  --gris: #5e5e5e;
+  --gris-claro: #d6d1c7;
+  --dorado: #c9a227;
+  --rojo: #b3262e;
+  --beige: #f3ead9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--beige);
+  color: var(--negro);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Aviso superior --- */
+.notice {
+  background-color: var(--negro);
+  color: var(--dorado);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--dorado);
+}
+
+/* --- Contenedor Maestro (Márgenes Uniformes) --- */
+.main-wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  flex: 1;
+}
+
+/* --- Hero / Encabezado --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.Godfather {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--dorado);
+  box-shadow: 0 8px 20px rgba(18, 18, 18, 0.2);
+  margin-bottom: 1.2rem;
+}
+
+.titulo .h {
+  font-size: 2.3rem;
+  color: var(--negro);
+  letter-spacing: -0.5px;
+}
+
+.titulo .role {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.25rem 1rem;
+  background-color: var(--rojo);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+/* --- Sección de Subtítulos (About, Experience, Habilities) --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 3.5rem;
+}
+
+.subtitulos {
+  background-color: #ffffff;
+  border: 2px solid var(--gris-claro);
+  border-top: 4px solid var(--dorado);
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 14px rgba(18, 18, 18, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitulos h2 {
+  font-size: 1.45rem;
+  color: var(--negro);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gris-claro);
+}
+
+.subtitulos h4 {
+  color: var(--rojo);
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.subtitulos p {
+  color: var(--gris);
+  font-size: 0.96rem;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--negro);
+  font-weight: 500;
+}
+
+.skills-list li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: var(--dorado);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+/* --- Títulos de Sección --- */
+.projects-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.projects-header h2 {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--negro);
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--dorado);
+}
+
+.category-subtitle {
+  color: var(--gris);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* --- Grid de Tarjetas Principales --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid var(--gris-claro);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(18, 18, 18, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(18, 18, 18, 0.16);
+  border-color: var(--dorado);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background-color: var(--negro);
+  border-bottom: 3px solid var(--dorado);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.06);
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  color: var(--negro);
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  color: var(--gris);
+  font-size: 0.92rem;
+  margin-bottom: 1.4rem;
+  flex: 1; /* Empuja el botón siempre al fondo para alinear todas las tarjetas */
+}
+
+/* --- Botón Principal con Hover --- */
+.btn-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background-color: var(--negro);
+  color: var(--beige);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid var(--dorado);
+  transition: all 0.3s ease;
+}
+
+.btn-principal::after {
+  content: '→';
+  font-size: 1.2rem;
+  color: var(--dorado);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 38, 46, 0.35);
+}
+
+.btn-principal:hover::after {
+  color: var(--beige);
+  transform: translateX(4px);
+}
+
+/* --- Estilos para las Páginas de Trabajos (Semanas) --- */
+.btn-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.55rem 1.1rem;
+  background-color: var(--negro);
+  color: var(--dorado);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--dorado);
+  transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--rojo);
+  border-color: var(--rojo);
+  color: #ffffff;
+}
+
+.weeks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.8rem;
+}
+
+.week-card {
+  background-color: #ffffff;
+  border: 2px solid var(--gris-claro);
+  border-top: 4px solid var(--dorado);
+  border-radius: 12px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(18, 18, 18, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.week-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--rojo);
+}
+
+.week-badge {
+  align-self: flex-start;
+  background-color: var(--rojo);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+}
+
+.week-card h3 {
+  font-size: 1.25rem;
+  color: var(--negro);
+  margin-bottom: 0.5rem;
+}
+
+.week-card p {
+  color: var(--gris);
+  font-size: 0.94rem;
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+
+.multi-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--negro);
+  color: var(--beige);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 4px solid var(--dorado);
+  margin-top: auto;
+}
+
+footer h3 {
+  color: var(--dorado);
+  margin-bottom: 0.8rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer .enlinea a {
+  color: var(--beige);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+footer .enlinea a:hover {
+  color: var(--dorado);
+}
+
+footer p {
+  color: var(--gris-claro);
+  font-size: 0.85rem;
+}
+
+/* --- Responsive para móviles --- */
+@media (max-width: 600px) {
+  .main-wrapper {
+    padding: 1.8rem 1rem 3rem;
+  }
+
+  .titulo .h {
+    font-size: 1.8rem;
+  }
+
+  .projects-grid,
+  .info-grid,
+  .weeks-grid {
+    grid-template-columns: 1fr;
+  }
+}
