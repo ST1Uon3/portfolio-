@@ -409,6 +409,17 @@ footer p {
   border-radius: 20px;
 }
 
+.pairs-badge {
+  background-color: var(--gris);
+  color: #ffffff;
+  border: 1px solid var(--negro);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+}
+
 /* ==========================================================================
    RESPONSIVE PARA MÓVILES (COMPARTIDO)
    ========================================================================== */
