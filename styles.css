@@ -5,6 +5,34 @@
   --dorado: #c9a227;
   --rojo: #b3262e;
   --beige: #f3ead9;
+  --kepler-fondo: #1b365d;
+  --kepler-acento: #38bdf8;
+  --kepler-texto: #e0f2fe;
+  --orion-fondo: #2d1b4e;
+  --orion-acento: #c084fc;
+  --orion-texto: #f3e8ff;
+}
+
+.kepler-badge {
+  background-color: var(--kepler-fondo);
+  color: var(--kepler-texto);
+  border: 1px solid var(--kepler-acento);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+}
+
+.orion-badge {
+    background-color: var(--orion-fondo);
+    color: var(--orion-texto);
+    border: 1px solid var(--orion-acento);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
 }
 
 /* ==========================================================================
@@ -12,7 +40,9 @@
    (Base, aviso superior, contenedor, encabezados de sección, botones y footer)
    ========================================================================== */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -378,6 +408,18 @@ footer p {
   font-size: 0.94rem;
   margin-bottom: 1.4rem;
   flex: 1;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.card-actions .btn-principal {
+  padding: 0.68rem 1rem;
 }
 
 .multi-links {
